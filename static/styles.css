@@ -1,0 +1,101 @@
+/* Responsive grid layout for chat history and chat form */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Chat form styles */
+.chat-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.chat-form label {
+  font-weight: bold;
+}
+
+.chat-form input[type="text"] {
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.chat-form button[type="submit"] {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #007aff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.chat-form button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading indicator styles */
+.loading-indicator {
+  display: none;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #007aff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Feedback button styles */
+.feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-btn {
+  padding: 0.5rem;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.feedback-btn:focus {
+  outline: none;
+}
+
+.feedback-btn:active {
+  transform: translateY(2px);
+}
+
+/* Chat entry styles */
+.chat-entry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.user-question {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.bot-answer {
+  margin-left: 1rem;
+}
